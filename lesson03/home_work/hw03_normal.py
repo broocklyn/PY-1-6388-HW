@@ -46,6 +46,20 @@ sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
 # Напишите собственную реализацию стандартной функции filter.
 # Разумеется, внутри нельзя использовать саму функцию filter.
 
+def filter(func,x):
+	a = []
+	b = iter(x)
+	if func == None:
+		for i in b:
+			if i != 0:
+				if i != '':
+					a.append(i)
+		return iter(a)
+	else:
+		for i in b:
+			if func(i) == True:
+				a.append(i)
+	return iter(a)
 
 # Задача-4:
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
