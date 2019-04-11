@@ -65,3 +65,11 @@ def filter(func,x):
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
 # Определить, будут ли они вершинами параллелограмма.
 
+def parall(x1,y1,x2,y2,x3,y3,x4,y4):
+    if y1 == y2 and y3 == y4 and x1 != x2 != x3 != x4 or y1 == y3 and y2 == y4 and x1 != x2 != x3 != x4 or y1 == y4 and y2 == y3 and x1 != x2 != x3 != x4:
+        print(True)
+    elif x1 == x2 and x3 == x4 and y1 != y2 != y3 != y4 or x1 == x3 and x2 == x4 and y1 != y2 != y3 != y4 or x1 == x4 and x2 == x3 and y1 != y2 != y3 != y4:
+        print(True)
+    else:
+        print(False)
+parall(1,2,3,4,5,6,7,8)
