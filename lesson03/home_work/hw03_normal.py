@@ -1,9 +1,27 @@
+
+__author__ = 'Учускин Павел Валерьевич'
+
 # Задание-1:
 # Напишите функцию, возвращающую ряд Фибоначчи с n-элемента до m-элемента.
 # Первыми элементами ряда считать цифры 1 1
 
 def fibonacci(n, m):
-    pass
+	fib_p_p = 1
+	fib_p = 1
+	fib = 0
+	if n == 1:
+		print(fib_p_p, fib_p, end = ' ')
+	elif n == 2:
+		print(fib_p, end = ' ')
+	for i in range(3,m + 1):
+		fib = fib_p_p + fib_p
+		fib_p_p = fib_p
+		fib_p = fib
+		if i >= n and i <= m:
+			print(fib, end = ' ')
+		elif i > m:
+			return
+fibonacci(3,10)
 
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
