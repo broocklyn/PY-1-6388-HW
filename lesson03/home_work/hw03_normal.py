@@ -30,8 +30,16 @@ fibonacci(3,10)
 
 
 def sort_to_max(origin_list):
-    pass
-
+	sort_to_max_list = []
+	for i in range(len(origin_list)):
+		min = float('inf')
+		for j in origin_list:
+			if j <= min:
+				min = j
+		sort_to_max_list.append(min)
+		origin_list.remove(min)
+	print(sort_to_max_list)
+	
 sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
 
 # Задача-3:
