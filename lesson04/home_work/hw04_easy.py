@@ -38,3 +38,12 @@ print(fruit_c)
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+lst2 = []
+for el in range(10):
+    lst2.append(random.randint(-10, 10))
+print('lst2 = ', lst2)
+
+list_result = [n for n in lst2 if n % 3 == 0 and n > 0 and not n % 4 == 0 ]
+
+print('list_result = ',list_result)
