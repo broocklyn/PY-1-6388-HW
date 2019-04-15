@@ -71,6 +71,28 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'JFaXiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQ'\
        'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
 
+#решение с помощью re
+pattern="[a-z][a-z]([A-Z]+)[A-Z][A-Z]"
+print(re.findall(pattern, line_2))
+
+
+#решение без re
+z=[]
+for x in range(2,len(line_2)-2):
+    if line_2[x-2] in low_char and line_2[x-1] in low_char and line_2[x+1] not in low_char and line_2[x+2] not in low_char and line_2[x] not in low_char:
+        while line_2[x+2] not in low_char:
+            z.append(line_2[x])
+            x+=1
+    else:
+        z.append(' ')
+z=''.join(z)
+z=z.split(' ')
+while '' in z:
+    z.remove('')
+print(z)
+
+	   
+	   
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
 # произвольными целыми цифрами, в результате в файле должно быть
