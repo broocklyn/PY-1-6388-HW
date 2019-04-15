@@ -99,3 +99,16 @@ print(z)
 # 2500-значное произвольное число.
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
+
+num=[random.randint(0,9) for m in range(2500)]
+num=[str(x)for x in num]
+big_num=''.join(num)
+file = open("big_num.txt", 'w')
+file.write(big_num)
+file = open("big_num.txt", 'r')
+data=file.read()
+pattern='0+|1+|2+|3+|4+|5+|6+|7+|8+|9+'
+a=re.findall(pattern, data)
+print(max(a,key=len))
+file.close()
+
