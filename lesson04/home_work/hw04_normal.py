@@ -1,8 +1,15 @@
+
+__author__ = 'Учускин Павел Валерьевич'
+
 # Задание-1:
 # Вывести символы в нижнем регистре, которые находятся вокруг
 # 1 или более символов в верхнем регистре.
 # Т.е. из строки "mtMmEZUOmcq" нужно получить ['mt', 'm', 'mcq']
 # Решить задачу двумя способами: с помощью re и без.
+
+import random
+import re
+
 
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
@@ -19,6 +26,25 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'qHFjvihuNGEEFsfnMXTfptvIOlhKhyYwxLnqOsBdGvnuyEZIheApQGOXWeXoLWiDQNJFa'\
        'XiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQoiQ'\
        'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGc'
+
+#решение с помощью re
+pattern = '[a-z]+'
+print(re.findall(pattern, line))	   
+
+
+#решение без re
+arr=[]
+low_char='abcdefghijklmnopqrstuvwxyz'
+for x in line:
+    if x in low_char:
+        arr.append(x)
+    else:
+        arr.append(' ')
+arr=''.join(arr)
+arr=arr.split(' ')
+while '' in arr:
+    arr.remove('')
+print(arr)
 
 
 # Задание-2:
