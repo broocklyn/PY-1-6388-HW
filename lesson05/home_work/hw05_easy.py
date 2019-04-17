@@ -41,5 +41,17 @@ rm_dir(dirs)
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
+import os
+import shutil
+import sys
+
+def lst_dir():
+    path = os.getcwd()
+    return [d for d in os.listdir(path) if os.path.isdir(d)]
+
+a = lst_dir()
+
+print(a)
+
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
