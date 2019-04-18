@@ -58,3 +58,42 @@ print(a)
 
 import shutil
 shutil.copy(__file__, __file__ + "_copy.py")
+
+
+
+#Функции для задания нормал
+
+
+def show_dc():  # Содержимое текущей папки
+    path = os.getcwd()
+    return os.listdir(path)
+
+
+def move(req_dir):  # Перейти в новую папку
+    path = f"{req_dir}"
+    try:
+        os.chdir(path)
+    except NameError:
+        print("Переход невозможен")
+    else:
+        print(f"Папка {req_dir} возможна для перехода")
+
+
+def delete(req_dir):  # Удалить папку
+    path = f"{req_dir}"
+    try:
+        os.rmdir(path)
+    except OSError:
+        print(f"Ошибка удаления папки {path} ")
+    else:
+        print("Удаление прошло успешно")
+
+
+def create(req_dir):  # Создать папку
+    path = f"{req_dir}"
+    try:
+        os.mkdir(path)
+    except OSError:
+        print(f"Ошибка создания папки {path} ")
+    else:
+        print("Папка была успешно создана")
