@@ -47,3 +47,30 @@ print("---------------------------------")
 # проверка, является ли фигура равнобочной трапецией;
 # вычисления: длины сторон, периметр, площадь.
 
+class Ravine_Trapezium:
+    def __init__(self, x1, y1, x2, y2, x3, y3, x4, y4):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+        self.x3 = x3
+        self.y3 = y3
+        self.x4 = x4
+        self.y4 = y4
+        self.a = sqrt((self.x1-self.x4)**2 + (self.y1-self.y4)**2)
+        self.b = sqrt((self.x3-self.x2)**2 + (self.y3-self.y2)**2)
+        self.H = sqrt((self.x2-self.x1)**2 + (self.y2-self.y1)**2)
+        self.h = sqrt((self.x4-self.x3)**2 + (self.y4-self.y3)**2)
+    def is_ravine(self):
+        if self.a != self.b:
+            return "Трапеция не равнобочная"
+        else:
+            return "Трапеция равнобочная"
+    def l_s(self):
+        return self.H, self.b, self.h, self.a
+    def S(self):
+        return (self.a + self.b) * abs(self.y4 - self.y1) / 2
+Trap1 = Ravine_Trapezium(1,1,5,1,4,4,2,4)
+print(Trap1.is_ravine())
+print(Trap1.l_s())
+print(Trap1.S())
